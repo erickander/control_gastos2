@@ -62,7 +62,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-          dd($id);
+         $permisos=permisos::('permisos.edit')
     }
 
     /**
