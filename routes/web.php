@@ -31,3 +31,7 @@ Route::get('/users/create', 'UsuarioController@create')->name('users.create');
 Route::post('/users/store', 'UsuarioController@store')->name('users.store');
 Route::get('/permisos/edit/{per_id}', 'permisosController@edit')->name('permisos.edit');
 Route::get('/users/edit/{usu_id}', 'UsuarioController@edit')->name('users.edit');
+Route::post('/permisos/update{per_id}', 'permisosController@update')->name('permisos.update');
+Route::post('/users/update{usu_id}', 'UsuarioController@update')->name('users.update');
+Route::post('/permisos/destroy{per_id}', 'permisosController@destroy')->name('permisos.destroy');
+Route::post('/users/destroy{usu_id}', 'UsuarioController@destroy')->name('users.destroy');

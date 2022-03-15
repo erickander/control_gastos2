@@ -62,7 +62,9 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-         
+         $users=User::find($id);
+         return view("auth.usuario.edit")
+         ->with('users',$users);
     }
 
     /**
@@ -74,8 +76,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+         $usu=User::find($id);
+        $usu->update($request->all());
+        return redirect(route('users'));
+              }
 
     /**
      * Remove the specified resource from storage.
@@ -85,6 +89,7 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+         User::destroy($id);
+        return redirect(route('users'));
     }
 }
