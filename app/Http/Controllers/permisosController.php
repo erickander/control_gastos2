@@ -62,7 +62,8 @@ class permisosController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
+        $permisos=permisos::find($id);
+         dd($permisos);
     }
 
     /**
