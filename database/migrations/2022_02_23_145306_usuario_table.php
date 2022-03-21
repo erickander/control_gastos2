@@ -22,8 +22,10 @@ Schema::create('users', function (Blueprint $table) {
             $table->string('usu_cedula')->unique();
             $table->rememberToken();
             $table->timestamps();
-        });
-    
+            $table->foreignId('per_id')->references('per_id')->on('Permisos');
+        }); 
+
+        
     }
 
     /**

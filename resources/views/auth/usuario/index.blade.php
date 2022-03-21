@@ -5,8 +5,8 @@
      <table class="table">
      <th> # </th>
      <th> Nombre </th>
+     <th> Rol </th>
      <th> Cedula </th>
-     <th> rol </th>
      <th> Email </th>
      <a class="btn btn-info text-white" href="{{route('users.create')}}">Nuevo</a>
      <th>Acciones</th>
