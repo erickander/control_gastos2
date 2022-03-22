@@ -8,9 +8,9 @@ class permisos extends Model
 {   
     public $timestamps=false;
     protected $table='permisos';
-    protected $primaryKey='per_id';
+    protected $primaryKey='tip_id';
     protected $fillable = [
-        'per_tipo'
+        'tip_descripcion'
     ];
 
 }

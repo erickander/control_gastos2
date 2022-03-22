@@ -16,12 +16,14 @@ class MovimientosTable extends Migration
 Schema::create('Movimientos', function (Blueprint $table) {
             $table->id('mov_id');
             $table->date('mov_fecha');
-            $table->string('mov_tipo');//0 egresos 1 ingresos
+            $table->integer('mov_tipo');//0 egresos 1 ingresos
             $table->float('mov_cantidad');
             $table->string('mov_detalle');
             $table->rememberToken();
             $table->timestamps();
             $table->foreignId('usu_id')->references('usu_id')->on('users');
+            $table->foreignId('tip_id')->references('tip_id')->on('tipos');
+            
            
         }); 
     }
