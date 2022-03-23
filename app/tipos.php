@@ -8,8 +8,8 @@ class tipos extends Model
 {
      public $timestamps=false;
     protected $table='tipos';
-    protected $primaryKey='per_id';
+    protected $primaryKey='tip_id';
     protected $fillable = [
-        'per_tipo'
+        'tip_descripcion'
     ];
 }

@@ -30,6 +30,7 @@
         <a class="btn btn-info text-white" href="{{route('users')}}">Usuarios</a>
          <a class="btn btn-info text-white" href="{{route('permisos')}}">Permisos</a>
          <a class="btn btn-info text-white" href="{{route('movimientos')}}">Movimientos</a>
+         <a class="btn btn-info text-white" href="{{route('tipos')}}">Tipos</a>
     </div>
     
     @endguest

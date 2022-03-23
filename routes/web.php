@@ -37,4 +37,9 @@ Route::post('/permisos/destroy{per_id}', 'permisosController@destroy')->name('pe
 Route::post('/users/destroy{usu_id}', 'UsuarioController@destroy')->name('users.destroy');
 Route::get('/movimientos', 'MovimientosController@index')->name('movimientos');
 Route::get('/movimientos/create', 'MovimientosController@create')->name('movimientos.create');
-
+Route::get('/tipos', 'TiposController@index')->name('tipos');
+Route::get('/tipos/create', 'TiposController@create')->name('tipos.create');
+Route::post('/tipos/store', 'TiposController@store')->name('tipos.store');
+Route::get('/tipos/edit/{tip_id}', 'TiposController@edit')->name('tipos.edit');
+Route::post('/tipos/update{tip_id}', 'TiposController@update')->name('tipos.update');
+Route::post('/tipos/destroy{tip_id}', 'TiposController@destroy')->name('tipos.destroy');
