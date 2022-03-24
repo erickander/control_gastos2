@@ -20,7 +20,6 @@ Schema::create('Movimientos', function (Blueprint $table) {
             $table->float('mov_cantidad');
             $table->string('mov_detalle');
             $table->rememberToken();
-            $table->timestamps();
             $table->foreignId('usu_id')->references('usu_id')->on('users');
             $table->foreignId('tip_id')->references('tip_id')->on('tipos');
             

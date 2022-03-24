@@ -35,11 +35,23 @@ Route::post('/permisos/update{per_id}', 'permisosController@update')->name('perm
 Route::post('/users/update{usu_id}', 'UsuarioController@update')->name('users.update');
 Route::post('/permisos/destroy{per_id}', 'permisosController@destroy')->name('permisos.destroy');
 Route::post('/users/destroy{usu_id}', 'UsuarioController@destroy')->name('users.destroy');
-Route::get('/movimientos', 'MovimientosController@index')->name('movimientos');
-Route::get('/movimientos/create', 'MovimientosController@create')->name('movimientos.create');
+
 Route::get('/tipos', 'TiposController@index')->name('tipos');
 Route::get('/tipos/create', 'TiposController@create')->name('tipos.create');
 Route::post('/tipos/store', 'TiposController@store')->name('tipos.store');
 Route::get('/tipos/edit/{tip_id}', 'TiposController@edit')->name('tipos.edit');
 Route::post('/tipos/update{tip_id}', 'TiposController@update')->name('tipos.update');
 Route::post('/tipos/destroy{tip_id}', 'TiposController@destroy')->name('tipos.destroy');
+
+///movimientos
+Route::get('/movimientos', 'MovimientosController@index')->name('movimientos');
+Route::get('/movimientos/create', 'MovimientosController@create')->name('movimientos.create');
+Route::post('/movimientos/store', 'MovimientosController@store')->name('movimientos.store');
+Route::get('/movimientos/edit/{mov_id}', 'MovimientosController@edit')->name('movimientos.edit');
+Route::post('/movimientos/update{mov_id}', 'MovimientosController@update')->name('movimientos.update');
+Route::post('/movimientos/destroy{mov_id}', 'MovimientosController@destroy')->name('movimientos.destroy');
+
+
+
+
+

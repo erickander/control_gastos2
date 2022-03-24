@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipos;
+use App\movimientos;
+use Auth;
+
 
 
 class MovimientosController extends Controller
@@ -15,7 +18,10 @@ class MovimientosController extends Controller
      */
     public function index()
     {
-        return view('movimientos.index');
+        $movimientos=movimientos::all();
+        return view('movimientos.index')
+        ->with('movimientos',$movimientos);
+        
     }
 
     /**
@@ -26,11 +32,9 @@ class MovimientosController extends Controller
     public function create()
     {
         $tipos=tipos::all();
-        return view('movimientos.create')
-        ->with('tipos',$tipos)
-        ;
+        return view ('movimientos.create')->with('tipos',$tipos);
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +43,11 @@ class MovimientosController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data=$request->all();
+        $data['usu_id']=Auth::user()->usu_id;
+        //dd($data);
+        movimientos::create($data);
+        return redirect(route('movimientos'));
     }
 
     /**
@@ -61,7 +69,11 @@ class MovimientosController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $movimientos=Movimientos::find($id);
+        $tipos=tipos::all();
+         return view("movimientos.edit")
+         ->with('movimientos',$movimientos)->with('tipos',$tipos);
     }
 
     /**
@@ -73,7 +85,9 @@ class MovimientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mov=movimientos::find($id);
+        $mov->update($request->all());
+        return redirect(route('movimientos'));
     }
 
     /**
@@ -84,6 +98,7 @@ class MovimientosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        movimientos::destroy($id);
+        return redirect(route('movimientos'));
     }
 }
