@@ -50,7 +50,7 @@ Route::post('/movimientos/store', 'MovimientosController@store')->name('movimien
 Route::get('/movimientos/edit/{mov_id}', 'MovimientosController@edit')->name('movimientos.edit');
 Route::post('/movimientos/update{mov_id}', 'MovimientosController@update')->name('movimientos.update');
 Route::post('/movimientos/destroy{mov_id}', 'MovimientosController@destroy')->name('movimientos.destroy');
-
+Route::post('/movimientos/search','MovimientosController@index')->name('movimientos.search');
 
 
 

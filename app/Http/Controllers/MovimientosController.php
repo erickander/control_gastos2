@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Tipos;
 use App\movimientos;
 use Auth;
-
+use DB;
 
 
 class MovimientosController extends Controller
@@ -16,9 +16,23 @@ class MovimientosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $movimientos=movimientos::all();
+        $data=$request->all();
+        $desde=date('Y-m-d');
+        $hasta=date('y-m-d');
+        if (isset($data['desde'])) {
+        $desde=$data['desde'];
+        $hasta=$data['hasta'];
+        }
+        
+        $movimientos=DB::select("
+            SELECT * FROM movimientos m JOIN users u 
+            ON m.usu_id=u.usu_id
+            JOIN tipos t ON m.tip_id=t.tip_id
+            WHERE m.mov_fecha BETWEEN '$desde' AND '$hasta'
+             ");
+
         return view('movimientos.index')
         ->with('movimientos',$movimientos);
         
