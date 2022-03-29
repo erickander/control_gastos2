@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
-
+use App\Tipos;
+use DB;
 class UsuarioController extends Controller
 {
     /**
@@ -38,6 +39,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
+        $data['per_id']=Auth::permisos()->per_id;
         User::create($data);
         return redirect(route('users'));
 
@@ -63,8 +65,9 @@ class UsuarioController extends Controller
     public function edit($id)
     {
          $users=User::find($id);
+        $tipos=tipos::all();
          return view("auth.usuario.edit")
-         ->with('users',$users);
+         ->with('users',$users)->with('tipos',$tipos);
     }
 
     /**

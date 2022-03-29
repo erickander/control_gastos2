@@ -4,8 +4,8 @@
 <a class="btn btn-info text-white" href="{{route('movimientos.create')}}">Nuevo</a>
 <form action="{{route('movimientos.search')}}" method="POST">
     @csrf
-    Desde:<input type="date" name="desde">
-    Hasta:<input type="date" name="hasta">
+    Desde:<input type="date" name="desde" value="{{$desde}}">
+    Hasta:<input type="date" name="hasta" value="{{$hasta}}">
     <button class="btn btn-success">Buscar </button>
 </form>
      

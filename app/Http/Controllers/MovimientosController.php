@@ -34,7 +34,11 @@ class MovimientosController extends Controller
              ");
 
         return view('movimientos.index')
-        ->with('movimientos',$movimientos);
+        ->with('movimientos',$movimientos)
+         ->with('desde',$desde)
+         ->with('hasta',$hasta)
+         ;
+        
         
     }
 

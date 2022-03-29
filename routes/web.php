@@ -35,6 +35,7 @@ Route::post('/permisos/update{per_id}', 'permisosController@update')->name('perm
 Route::post('/users/update{usu_id}', 'UsuarioController@update')->name('users.update');
 Route::post('/permisos/destroy{per_id}', 'permisosController@destroy')->name('permisos.destroy');
 Route::post('/users/destroy{usu_id}', 'UsuarioController@destroy')->name('users.destroy');
+//tipos
 
 Route::get('/tipos', 'TiposController@index')->name('tipos');
 Route::get('/tipos/create', 'TiposController@create')->name('tipos.create');

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<script src="{{asset('js/movimientos.js')}}"></script>
 
-<form action="{{route('movimientos.store')}}" method="POST">
+<form action="{{route('movimientos.store')}}" method="POST" onsubmit="return validar()">
      @csrf
      <div class="container">
          <div class="row">
