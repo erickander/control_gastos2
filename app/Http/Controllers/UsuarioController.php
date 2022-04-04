@@ -14,7 +14,11 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $users=User::all();
+        //$users=User::all();
+
+        $users=DB::select("
+            SELECT * FROM  users u JOIN permisos p 
+            ON u.per_id=p.per_id");
         return view('auth.usuario.index')
         ->with('users',$users)
         ;
@@ -39,7 +43,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-        $data['per_id']=Auth::permisos()->per_id;
+        //$data['per_id']=APP::permisos()->per_id;
         User::create($data);
         return redirect(route('users'));
 
@@ -65,9 +69,10 @@ class UsuarioController extends Controller
     public function edit($id)
     {
          $users=User::find($id);
-        $tipos=tipos::all();
+        //$tipos=tipos::all();
          return view("auth.usuario.edit")
-         ->with('users',$users)->with('tipos',$tipos);
+         ->with('users',$users);
+         //->with('tipos',$tipos);
     }
 
     /**

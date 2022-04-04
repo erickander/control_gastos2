@@ -4,6 +4,7 @@
 
      <table class="table">
      <th> # </th>
+     <th>Permisos</th>
      <th> Nombre </th>
      <th> Rol </th>
      <th> Cedula </th>
@@ -15,6 +16,7 @@
    @foreach($users  as  $u)
    <tr> 
      <td>{{$loop->iteration }}</td>
+     <td>{{$u->per_tipo}}</td>
      <td>{{$u->usu_name}}</td>
      <td>{{$u->usu_rol }}</td>
      <td>{{$u->usu_cedula }}</td>

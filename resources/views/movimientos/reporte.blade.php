@@ -1,26 +1,23 @@
-              @extends('layouts.app')
-@section('content')
-
-<a class="btn btn-info text-white" href="{{route('movimientos.create')}}">Nuevo</a>
-<form action="{{route('movimientos.search')}}" method="POST">
-    @csrf
-    Desde:<input type="date" name="desde" value="{{$desde}}">
-    Hasta:<input type="date" name="hasta" value="{{$hasta}}">
-    <button class="btn btn-success" value="btn_buscar" name="btn_buscar">Buscar </button>
-    <button class="btn btn-danger" value="btn_pdf" name="btn_pdf">PDF</button>
-</form>
-     
+<h4 style="bg-green">Control de Gastos</h4>
 
 <table class="table">
 
      <th> # </th>
+     <br>
      <th>Nombre</th>
+     <br>
      <th>Concepto</th>
+     <br>
      <th> Detalle </th>
+     <br>
      <th> Fecha </th>
+     <br>
      <th>Tipo</th>
+     <br>
      <th>Cantidad</th>
+     <br>
      <th>Acciones</th>
+
      <?php
 $t_ing=0;
 $t_egr=0;
@@ -43,14 +40,20 @@ $t_saldo=$t_ing-$t_egr;
    <tr> 
      <td>{{$loop->iteration }}</td>
      <td>{{$mov->usu_name}}</td>
+     <br>
      <td>{{$mov->tip_descripcion}}</td>
+     <br>
      <td>{{$mov->mov_detalle }}</td>
+     <br>
      <td>{{$mov->mov_fecha}}</td>
      @if($mov->mov_tipo==1)
+     <br>
     <td>Ingreso</td>
     @else
+    <br>
     <td>Egreso</td>
     @endif
+    <br>
      <td>${{number_format ($mov->mov_cantidad,2) }}</td>
      
      
@@ -82,7 +85,3 @@ $t_saldo=$t_ing-$t_egr;
      
     
      <table>
-
-
-
-@endsection
