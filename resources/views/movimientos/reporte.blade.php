@@ -3,19 +3,19 @@
 <table class="table">
 
      <th> # </th>
-     <br>
+     
      <th>Nombre</th>
-     <br>
+     
      <th>Concepto</th>
-     <br>
+     
      <th> Detalle </th>
-     <br>
+     
      <th> Fecha </th>
-     <br>
+     
      <th>Tipo</th>
-     <br>
+     
      <th>Cantidad</th>
-     <br>
+     
      <th>Acciones</th>
 
      <?php
