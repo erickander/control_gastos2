@@ -4,8 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card border-dark mb-3" style="max-width: 540px;">
+                <div class="card-header">
+                     <div class="row g-0">
+                     <div class="col-md-6">
+                  <img  src="https://cdn-icons-png.flaticon.com/512/3534/3534139.png" class="img-fluid rounded-start" alt="...">
+                  <h3 class="bg-dark text-white" align="center">Registro Al Sistema</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

@@ -4,8 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card border-dark mb-3" style="max-width: 50rem;">
+                <div class="card-header">{{ __('') }}
+                     <div class="row g-0">
+                     <div class="col-md-6">
+                  <img  src="https://i0.wp.com/accounter.co/cdn/2020/04/contador.jpg?fit=1200%2C675&ssl=1" class="img-fluid rounded-start" alt="...">
+                  <h3 class="bg-dark text-white" align="center">Ingreso Al Sistema</h3>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

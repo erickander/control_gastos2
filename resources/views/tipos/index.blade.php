@@ -2,7 +2,7 @@
 @section('content')
 
 
-     <table class="table">
+     <table class="table table-info table-striped">
      <th> # </th>
      <th> tipo </th>
       <a class="btn btn-info text-white" href="{{route('tipos.create')}}"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">

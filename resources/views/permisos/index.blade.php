@@ -2,7 +2,7 @@
 @section('content')
 
 
-     <table class="table">
+     <table class="table table-info table-striped">
      <th> # </th>
      <th> tipo </th>
       <a class="btn btn-info text-white" href="{{route('permisos.create')}}">Nuevo</a>

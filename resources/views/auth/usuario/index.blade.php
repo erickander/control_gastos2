@@ -2,7 +2,7 @@
 @section('content')
 
 
-     <table class="table">
+     <table class="table table-info table-striped">
      <th> # </th>
      <th>Permisos</th>
      <th> Nombre </th>

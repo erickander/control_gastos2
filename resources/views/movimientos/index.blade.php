@@ -11,7 +11,7 @@
 </form>
      
 
-<table class="table">
+<table class="table table-info table-striped">
 
      <th> # </th>
      <th>Nombre</th>
@@ -81,7 +81,7 @@ $t_saldo=$t_ing-$t_egr;
      <td>Saldo: ${{number_format($t_saldo)}}</td>
      
     
-     <table>
+     </table>
 
 
 
