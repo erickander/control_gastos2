@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<div class="container">
+         <div class="row">
+            <div class="col-md-9">
+                <div class="card mb-6 border-info">
+                    <div class="card-body">
 <h4 class="bg-dark text-white" align="center">Editar Categorias</h4>
     <form action="{{route('movimientos.update',$movimientos->mov_id)}}" method="POST">
      	@csrf
@@ -22,4 +27,6 @@
      <button class="btn btn-success">Guardar</button>
      </p>
      </form>
+ </div>
+</div>
 @endsection

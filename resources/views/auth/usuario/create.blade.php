@@ -3,9 +3,14 @@
 
 
 @section('content')
-
+<div class="container">
+         <div class="row">
+            <div class="col-md-9">
+                <div class="card mb-6 border-info">
+                    <div class="card-body">
    <h2 class="bg-dark text-white" align="center">Formulario De Registro</h2>
-     <form action="{{route('users.store')}}" method="POST">
+   <script src="{{asset('js/usuarios.js')}}"></script>
+     <form action="{{route('users.store')}}" method="POST" onsubmit="return validar()">
      	@csrf
      	
      <label class="col-md-4 col-form-label text-md-right">Lista De Usuarios</label>
@@ -35,4 +40,6 @@
      </p>   
      <button class="btn btn-success" >Guardar</button>
      </form>
+   </div>
+ </div>
 @endsection
